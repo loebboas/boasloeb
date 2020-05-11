@@ -51,8 +51,8 @@ export class AppComponent implements OnInit {
   eventList: Event[] = [
     {  name: 'being a child',
       text: '',
-      year: 1992,
-      duration: 2009,
+      year: 1989,
+      duration: 2007,
       distance: '45%',
       dur: '18s'
     },
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
         text: '',
         year: 1998,
         duration: 2014,
-        distance: '66%',
+        distance: '59%',
         dur: '16s'
       },
       {  name: 'playing with music',
@@ -100,7 +100,7 @@ export class AppComponent implements OnInit {
           },
           {  name: 'following my intuition',
               text: '',
-              year: 2015,
+              year: 2013,
               duration: 2041,
               distance: '61%',
               dur: '15s'
@@ -129,7 +129,7 @@ export class AppComponent implements OnInit {
                 {  name: 'becoming agile',
                     text: '',
                     year: 2017,
-                    duration: 2050,
+                    duration: 2045,
                     distance: '6%',
                     dur: '3s'
                   },
@@ -138,14 +138,14 @@ export class AppComponent implements OnInit {
                       year: 2011,
                       duration: 2033,
                       distance: '67%',
-                      dur: '25s'
+                      dur: '22s'
                     },
-                  {  name: 'legaltech and possibilities',
+                  {  name: 'legaltech and a new world',
                       text: '',
                       year: 2019,
                       duration: 2030,
                       distance: '26%',
-                      dur: '14s'
+                      dur: '11s'
                     },
                     {  name: 'always learning',
                         text: '',
@@ -157,19 +157,19 @@ export class AppComponent implements OnInit {
                       {  name: 'enjoying life',
                           text: '',
                           year: 2030,
-                          duration: 2070,
+                          duration: 2069,
                           distance: '42%',
-                          dur: '30s'
+                          dur: '28s'
                         }
   ]
 
   start() {
     this.count = 1989;
-    this.stopit = false;
+    this.stopit = true;
 }
 
   checkYear(){
-  if (this.count >= 2072) {
+  if (this.count >= 2070) {
   this.stopit = false;
 }
 }

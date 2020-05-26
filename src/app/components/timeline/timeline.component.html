@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div fxLayout="column" class="blue" fxFlexFill fxLayoutAlign="center center" *ngIf="counter$">
+    <div *ngIf="stopit">
+        <h1 class="white rotateyear">{{ counter$ | async }}</h1>
+    </div>
+    <div *ngIf="!stopit" class="pointer" (click)="start()">
+        <h1 class="white">restart</h1>
+    </div>
+    <div>
+        <h1 class="animate__animated animate__bounce white">{{ title }}</h1>
+    </div>
+    <div *ngIf="stopit">
+        <h1 routerLink="/sudoku" class="white rotateplace">{{ place }}</h1>
+    </div>
+    <div *ngIf="!stopit">
+        <h1 routerLink="/sudoku" class="white">{{ place }}</h1>
+    </div>
+</div>
+
+<div *ngFor="let event of eventList">
+    <div class="random" *ngIf="event.duration >= count">
+        <div class="flyingdown white" *ngIf="event.year <= count" [style]="{'left': event.distance, 'color': event.color, 'animation-duration': event.dur }">
+            {{ event.name}}
+        </div>
+    </div>

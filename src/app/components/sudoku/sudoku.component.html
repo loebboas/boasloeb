@@ -1,0 +1,32 @@
+<div fxLayout="row wrap" class="full" fxFlexFill fxLayoutGap="10">
+    <div class="sudoku" fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" *ngFor="let row of cells; index as r" [style.height.px]="squareSize" [style.border-top]=" r % 3 == 0 ? '3px solid black' : '1px solid black' " [style.border-bottom]=" r+1 == ss ? '3px solid black' : '1px solid black' ">
+            <div fxLayout="column " fxLayoutAlign="center center " [style.font-size]="'32px'" [style.background-color]="
+            selected && ( selected.c == c || selected.r == r ) ? 'lightgrey' : 'white'" [style.border-left]=" c % 3 == 0 ? '3px solid black' : '1px solid black' " [style.border-right]=" c+1 == ss ? '3px solid black' : '1px solid black' " [style.width.px]="squareSize "
+                *ngFor="let cell of row; index as c " (click)="select(r, c) ">
+                <div *ngIf="cell.num != 0">{{ cell.num }}</div>
+                <div *ngIf="cell.num == 0 && cell.corner.length > 0" fxLayout="column" fxLayoutAlign="start center" fxFill>
+                    <div fxLayout="row">
+                        <div class="cornermark" *ngFor="let cor of cell.corner">{{ cor }}</div>
+                        <div></div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="centermark" *ngFor="let cen of cell.center">{{ cen }}</div>
+                    </div>
+                </div>
+                <div *ngIf="cell.num == 0 && !(cell.corner.length > 0)" fxLayout="column" fxLayoutAlign="center center" fxFill>
+                    <div fxLayout="row">
+                        <div class="centermark" *ngFor="let cen of cell.center">{{ cen }}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div fxLayout="column" class="colored" fxLayoutAlign="center center" (click)="deSelect()">
+        <div fxLayout="row" class="marg" fxLayoutAlign="center center"> <button class="btn" (click)="loadSudoku()">reset</button></div>
+        <div fxLayout="row" class="marg info" fxLayoutAlign="center center"> modus: {{ mark }}</div>
+        <div fxLayout="row" class="marg" fxLayoutAlign="center center"> <button class="btn" (click)="nextSudoku()">New</button></div>
+        <div fxLayout="row" class="marg info" fxLayoutAlign="center center"> difficulty: {{ difficulty }}</div>
+    </div>
+</div>

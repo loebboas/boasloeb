@@ -3,28 +3,32 @@
 }
 
 .colored {
-    background-color: #37474F;
-    padding: 50px;
+    background-color: #A7A7AF;
+    padding: 20px;
     width: auto;
 }
 
 .info {
-    color: white;
+    color: black;
 }
 
 .btn {
-    padding: 20px;
-    border: 0;
+    width: 180px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid black;
 }
 
 .marg {
-    padding: 20px;
+    padding: 6px;
 }
 
 .centermark {
     font-size: 12px;
+    color: blue;
 }
 
 .cornermark {
     font-size: 12px;
+    color: green;
 }

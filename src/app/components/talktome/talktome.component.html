@@ -1,0 +1,11 @@
+<div fxLayout="column" class="blue" fxFlexFill fxLayoutAlign="center center">
+    <div class="others">
+        <h1 *ngIf="showAnswer">{{ answer }}</h1>
+    </div>
+    <div class="user">
+        <h1> {{ writing }}</h1>
+    </div>
+    <div *ngFor="let phrase of lastPhrases">
+        <h2>{{ phrase}}</h2>
+    </div>
+</div>

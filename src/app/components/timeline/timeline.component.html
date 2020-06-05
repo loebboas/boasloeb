@@ -8,19 +8,19 @@
         <h1 class="white">restart</h1>
     </div>
     <div>
-        <h1 class="animate__animated animate__bounce white">{{ title }}</h1>
+        <h1 class="animate__animated animate__bounce white pointer" routerLink="/projects">{{ title }}</h1>
     </div>
     <div *ngIf="stopit">
-        <h1 routerLink="/sudoku" class="white rotateplace">{{ place }}</h1>
+        <h1 routerLink="/projects" class="white rotateplace pointer">{{ place }}</h1>
     </div>
     <div *ngIf="!stopit">
-        <h1 routerLink="/sudoku" class="white">{{ place }}</h1>
+        <h1 routerLink="/projects" class="white pointer">{{ place }}</h1>
     </div>
 </div>
 
-<div *ngFor="let event of eventList">
+<div *ngFor="let event of eventList" routerLink="/projects">
     <div class="random" *ngIf="event.duration >= count">
-        <div class="flyingdown white" *ngIf="event.year <= count" [style]="{'left': event.distance, 'color': event.color, 'animation-duration': event.dur }">
+        <div class="flyingdown white pointer" *ngIf="event.year <= count" [style]="{'left': event.distance, 'color': event.color, 'animation-duration': event.dur }">
             {{ event.name}}
         </div>
     </div>

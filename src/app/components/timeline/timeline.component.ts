@@ -34,7 +34,7 @@ export class TimelineComponent implements OnInit {
 
   isOpen = true;
   year = 1989;
-  place = "more";
+  place = ".com";
   title = "boas loeb"
   colorTop = "red";
   colorMid = "red";
@@ -96,7 +96,7 @@ export class TimelineComponent implements OnInit {
       text: '',
       year: 1989,
       duration: 2007,
-      distance: '45%',
+      distance: '65%',
       dur: '18s'
     },
     {  name: 'learning martial arts',

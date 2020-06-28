@@ -24,6 +24,7 @@ export class CasetreeComponent implements OnInit {
   pxpos = window.innerHeight / 2;
   pypos = window.innerWidth / 2 + 80;
 
+
   phrase = false;
   phrases = [];
   word = false;

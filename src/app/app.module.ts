@@ -10,7 +10,8 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { HomeComponent } from './components/home/home.component';
 import { CasetreeComponent } from './components/casetree/casetree.component';
 import { TalktomeComponent } from './components/talktome/talktome.component';
-import { MandelbrotComponent } from './components/mandelbrot/mandelbrot.component';
+import { RechteinfachComponent } from './components/rechteinfach/rechteinfach.component';
+import { LinearComponent } from './components/linear/linear.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MandelbrotComponent } from './components/mandelbrot/mandelbrot.componen
     HomeComponent,
     CasetreeComponent,
     TalktomeComponent,
-    MandelbrotComponent
+    RechteinfachComponent,
+    LinearComponent
   ],
   imports: [
     BrowserModule,

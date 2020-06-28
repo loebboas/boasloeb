@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MandelbrotComponent } from './mandelbrot.component';
+import { LinearComponent } from './linear.component';
 
-describe('MandelbrotComponent', () => {
-  let component: MandelbrotComponent;
-  let fixture: ComponentFixture<MandelbrotComponent>;
+describe('LinearComponent', () => {
+  let component: LinearComponent;
+  let fixture: ComponentFixture<LinearComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MandelbrotComponent ]
+      declarations: [ LinearComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MandelbrotComponent);
+    fixture = TestBed.createComponent(LinearComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

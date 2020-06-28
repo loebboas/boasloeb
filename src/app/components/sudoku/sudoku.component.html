@@ -2,9 +2,9 @@
     <div class="sudoku" fxLayout="column" fxLayoutAlign="center center">
         <div fxLayout="row" *ngFor="let row of cells; index as r" [style.height.px]="squareSize" [style.border-top]=" r % 3 == 0 && ss == 9 ? '3px solid black' : '1px solid black' " [style.border-bottom]=" r+1 == ss ? '3px solid black' : '1px solid black' ">
             <div fxLayout="column " fxLayoutAlign="center center " [style.font-size]="'32px'" [style.background-color]="
-            selected && ( selected.c == c || selected.r == r ) ? 'lightgrey' : 'white'" [style.border-left]=" c % 3 == 0 && ss == 9 ? '3px solid black' : '1px solid black' " [style.border-right]=" c+1 == ss ? '3px solid black' : '1px solid black' " [style.width.px]="squareSize "
+            selected && ( selected.c == c || selected.r == r ) ? '#3F88C5' : '#E6E8E6'" [style.border-left]=" c % 3 == 0 && ss == 9 ? '3px solid black' : '1px solid black' " [style.border-right]=" c+1 == ss ? '3px solid black' : '1px solid black' " [style.width.px]="squareSize "
                 *ngFor="let cell of row; index as c " (click)="select(r, c) ">
-                <div *ngIf="cell.num != 0 && !cell.original" [style.color]="'grey'">{{ cell.num }}</div>
+                <div *ngIf="cell.num != 0 && !cell.original" [style.color]="'#3772FF'">{{ cell.num }}</div>
                 <div *ngIf="cell.num != 0 && cell.original">{{ cell.num }}</div>
                 <div *ngIf="cell.num == 0 && cell.corner.length > 0" fxLayout="column" fxLayoutAlign="start center" fxFill>
                     <div fxLayout="row">
@@ -24,24 +24,24 @@
             </div>
         </div>
     </div>
-
     <div fxLayout="column" class="colored" fxFlex fxLayoutAlign="center center" (click)="deSelect()" *ngIf="!numbers">
         <div fxLayout="row" class="marg info" fxLayoutAlign="center center"> <button class="btn" (click)="toggleNumbers()">back</button></div>
         <div fxLayout="row" class="marg" fxLayoutAlign="center center"> <button class="btn" (click)="loadSudoku()">reset</button></div>
         <div fxLayout="row" class="marg info" fxLayoutAlign="center center"> <button class="btn" (click)="createNew()">create</button></div>
         <div fxLayout="row" class="marg" fxLayoutAlign="center center"> <button class="btn" (click)="ssMark()">change gridsize</button></div>
     </div>
-    <div fxLayout="column" class="colored" fxFlex fxLayoutAlign="center center" *ngIf="numbers">
-        <div fxLayout="row" class="marg info" fxLayoutAlign="center center">
-            <div fxLayout="row" class="marg info" fxLayoutAlign="center center"> <button class="btn" (click)="switchMark()">mark {{ mark }}</button></div>
-            <div fxLayout="row" class="marg info" fxLayoutAlign="center center" [style.width.px]="100"> <button class="btn" (click)="toggleNumbers()">more</button></div>
-        </div>
+    <div fxLayout="column" class="colored" fxFlex fxLayoutAlign="center center" *ngIf="numbers" (click)="deSelect()">
         <div fxLayout="row" class="marg info" fxLayoutAlign="center center" *ngFor="let digrow of digits">
             <div fxLayout="column" class="marg info" fxLayoutAlign="center center" *ngFor="let numb of digrow"><button [style.width.px]="80" class="btn" (click)="writeNumber(numb)">{{numb}}</button></div>
         </div>
         <div fxLayout="row" class="marg info" fxLayoutAlign="center center">
             <div fxLayout="row" class="marg" fxLayoutAlign="center center" [style.width.px]="100"> <button class="btn" (click)="nextSudoku()">new</button></div>
             <div fxLayout="row" class="marg info" fxLayoutAlign="center center" [style.width.px]="100"> <button class="btn" (click)="solve()">solve</button></div>
-            <div fxLayout="row" class="marg info" fxLayoutAlign="center center" [style.width.px]="100"> <button class="btn" routerLink="/projects">projects</button></div>
+            <div fxLayout="row" class="marg info" fxLayoutAlign="center center" [style.width.px]="100"> <button class="btn" (click)="toggleNumbers()">more</button></div>
+        </div>
+        <div fxLayout="row" class="marg info" fxLayoutAlign="center center">
+            <div fxLayout="row" class="marg info" fxLayoutAlign="center center"> <button class="btn" (click)="switchMark()">mark: {{ mark }}</button></div>
+            <div fxLayout="row" class="marg info" fxLayoutAlign="center center"> <button class="btn" routerLink="/projects">back to projects</button></div>
+
         </div>
     </div>
